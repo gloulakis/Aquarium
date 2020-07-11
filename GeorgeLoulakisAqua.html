@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IT_Steps</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="George Loulakis">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            background-image: url("https://eskipaper.com/images/aquarium-backgrounds-4.jpg");
+            background-color: aqua;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 60px;
+            height: 60px;
+        }
+
+        div {
+            position: absolute;
+        }
+
+        .Message span {
+            position: relative;
+            display: inline-block;
+            padding-top: 20px;
+            padding-left: 5px;
+            font-size: 2em;
+            color: azure;
+            text-transform: uppercase;
+            animation: animate 1s ease-in-out infinite;
+            animation-delay: calc(0.1s*var(--i))
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0px);
+            }
+
+            20% {
+                transform: translateY(-20px);
+            }
+
+            40%,
+            100% {
+                transform: translateY(0px);
+            }
+
+        }
+
+        #fish1 {
+            transform: translate3d(50px, 50px, 0);
+        }
+
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            swim("fish1");
+            swim("fish2");
+            swim("fish3");
+            swim("fish4");
+            swim("fish5");
+            swim("fish6");
+            swim("fish7");
+            swim("fish8");
+            swim("fish9");
+            swim("fish10");
+            swim("fish11");
+            swim("fish12");
+            swim("fish13");
+
+        });
+
+        function swim(elid) {
+            let newLeft = Math.random() * $(window).width() - 10; // due to window width
+            let newTop = Math.random() * $(window).height() - 10; // due to window height
+            $("#" + elid).css({
+                "transform": "rotateY(0deg)"
+            });
+            let newLeftPos = newLeft + "px";
+            let newTopPos = newTop + "px";
+            if (parseInt($("#" + elid).css("left")) > newLeft) {
+                $("#" + elid).css({
+                    "transform": "rotateY(180deg)"
+                });
+            }
+            let timeToMove = Math.random() * 12000;
+            $("#" + elid).animate({
+                left: newLeftPos,
+                top: newTopPos
+            }, 1000 + timeToMove, function() {
+                swim(elid)
+            })
+        }
+        
+        function getClickPosition() {
+            document.getElementById("fish1").click();
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div class="Message">
+        <span style="--i:1;">I</span>
+        <span style="--i:2;">T</span>
+        <span style="--i:3;">_</span>
+        <span style="--i:4;">S</span>
+        <span style="--i:5;">T</span>
+        <span style="--i:6;">E</span>
+        <span style="--i:7;">P</span>
+        <span style="--i:8;">S</span>
+        <span style="--i:9;">_</span>
+        <span style="--i:10;">G</span>
+        <span style="--i:11;">e</span>
+        <span style="--i:12;">o</span>
+        <span style="--i:13;">r</span>
+        <span style="--i:14;">g</span>
+        <span style="--i:15;">e</span>
+        <span style="--i:16;">_</span>
+        <span style="--i:17;">L</span>
+        <span style="--i:18;">o</span>
+        <span style="--i:19;">u</span>
+        <span style="--i:10;">l</span>
+        <span style="--i:21;">a</span>
+        <span style="--i:22;">k</span>
+        <span style="--i:23;">i</span>
+        <span style="--i:24;">s</span>
+
+    </div>
+
+    <div id="fish1" onclick="getClickPosition()"><img src="https://titles.trackercdn.com/modern-warfare/db/images/ui_charm_354.png?7776274"></div>
+
+    <div id="fish2"><img src="https://titles.trackercdn.com/modern-warfare/db/images/ui_charm_354.png?7776274"></div>
+
+    <div id="fish3"><img src="https://titles.trackercdn.com/modern-warfare/db/images/ui_charm_354.png?7776274"></div>
+
+    <div id="fish4"><img src="https://titles.trackercdn.com/modern-warfare/db/images/ui_charm_354.png?7776274"></div>
+
+    <div id="fish5"><img src="https://titles.trackercdn.com/modern-warfare/db/images/ui_charm_354.png?7776274"></div>
+
+    <div id="fish6"><img src="https://titles.trackercdn.com/modern-warfare/db/images/ui_charm_354.png?7776274"></div>
+
+    <div id="fish7"><img src="https://titles.trackercdn.com/modern-warfare/db/images/ui_charm_354.png?7776274"></div>
+
+    <div id="fish8"><img src="https://titles.trackercdn.com/modern-warfare/db/images/ui_charm_354.png?7776274"></div>
+
+    <div id="fish9"><img src="https://titles.trackercdn.com/modern-warfare/db/images/ui_charm_354.png?7776274"></div>
+
+    <div id="fish10"><img src="https://titles.trackercdn.com/modern-warfare/db/images/ui_charm_354.png?7776274"></div>
+
+    <div id="fish11"><img src="https://titles.trackercdn.com/modern-warfare/db/images/ui_charm_354.png?7776274"></div>
+
+    <div id="fish12"><img src="https://titles.trackercdn.com/modern-warfare/db/images/ui_charm_354.png?7776274"></div>
+
+    <div id="fish13"><img src="https://titles.trackercdn.com/modern-warfare/db/images/ui_charm_354.png?7776274"></div>
+</body>
+
+</html>
